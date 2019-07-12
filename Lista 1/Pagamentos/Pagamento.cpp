@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Pagamento.h"
+#include "Controle.h"
 
 using namespace std;
 
@@ -38,8 +39,8 @@ Controle::Controle(){
 
 void Controle::setPagamentos(string nomeFuncionario, double valorPagamento){
   for(int i = 0; i < 50; i++){
-    if(!pagamentos[i].valorPagamento){
-      pagamentos[i].valorPagamento = valorPagamento;
+    if(!pagamentos[i].getValorPagamento()){
+      pagamentos[i].setValorPagamento(valorPagamento);
       pagamentos[i].setNomeFuncionario(nomeFuncionario);
       break;
     }
@@ -49,17 +50,16 @@ void Controle::setPagamentos(string nomeFuncionario, double valorPagamento){
 double Controle::calculaPagamentos(){
   double some = 0;
   for(int i = 0; i < 50; i ++){
-    some+=pagamentos[i].valorPagamento;
+    some+=pagamentos[i].getValorPagamento();
   }
   return some;
 };
 
 bool Controle::existePagamentoFuncionario(string nomeFuncionario){
   for(int i = 0; i < 50; i++){
-    if(pagamentos[i].nomeFuncionario == nomeFuncionario){
+    if(pagamentos[i].getNomeFuncionario() == nomeFuncionario){
       return true;
-    }else {
-      return false;
     }
   }
+  return false;
 };
