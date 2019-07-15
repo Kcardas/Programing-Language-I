@@ -37,11 +37,19 @@ double Invoice::getItemPrice(){
 };
 
 void Invoice::setItemNumber(int itemNumber){
-  this->itemNumber = itemNumber;
+  if(amountBought < 0){
+    this->amountBought = 0;
+  }else{
+    this->itemNumber = itemNumber;
+  }
 };
 
 void Invoice::setItemDescription(string itemDescription){
-  this->itemDescription = itemDescription;
+  if(itemPrice < 0){
+    this->itemPrice = 0;
+  }else{
+    this->itemDescription = itemDescription;
+  }
 };
 
 void Invoice::setAmountBought(int amountBought){
