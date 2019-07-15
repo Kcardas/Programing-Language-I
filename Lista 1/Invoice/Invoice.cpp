@@ -7,17 +7,11 @@ using namespace std;
 Invoice::Invoice(){};
 
 Invoice::Invoice(int itemNumber, string itemDescription, int amountBought, double itemPrice){
-  if(amountBought < 0){
-    this->amountBought = 0;
-  }
-  if(itemPrice < 0){
-    this->itemPrice = 0;
-  }
+  setItemPrice(itemPrice);
+  setAmountBought(amountBought);
 
   this->itemNumber = itemNumber;
-  this->itemPrice = itemPrice;
   this->itemDescription = itemDescription;
-  this->amountBought = amountBought;
 };
 
 int Invoice::getItemNumber(){
@@ -37,27 +31,27 @@ double Invoice::getItemPrice(){
 };
 
 void Invoice::setItemNumber(int itemNumber){
-  if(amountBought < 0){
-    this->amountBought = 0;
-  }else{
-    this->itemNumber = itemNumber;
-  }
+  this->itemNumber = itemNumber;
 };
 
 void Invoice::setItemDescription(string itemDescription){
-  if(itemPrice < 0){
-    this->itemPrice = 0;
-  }else{
-    this->itemDescription = itemDescription;
-  }
+  this->itemDescription = itemDescription;
 };
 
 void Invoice::setAmountBought(int amountBought){
-  this->amountBought = amountBought;
+  if(amountBought < 0){
+    this->amountBought = 0;
+  }else{
+    this->amountBought = amountBought;
+  }
 };
 
 void Invoice::setItemPrice(double itemPrice){
-  this->itemPrice = itemPrice;
+  if(itemPrice < 0){
+    this->itemPrice = 0;
+  }else{
+    this->itemPrice = itemPrice;
+  }
 };
 
 double Invoice::getInvoiceAmount(){
