@@ -29,7 +29,11 @@ int Data::GetDia(){
 };
 
 void Data::SetDia(int dia){
-  this->dia = dia;
+  if(dia < 1 || dia > 31){
+    this->dia = 01;
+  }else{
+    this->dia = dia;
+  }
 };
 
 int Data::GetMes(){
@@ -37,7 +41,11 @@ int Data::GetMes(){
 };
 
 void Data::SetMes(int mes){
-  this->mes = mes;
+  if(mes < 1 || mes >12){
+    this->mes = 01;
+  }else{
+    this->mes = mes;
+  }
 };
 
 int Data::GetAno(){
@@ -45,7 +53,11 @@ int Data::GetAno(){
 };
 
 void Data::SetAno(int ano){
-  this->ano = ano;
+  if(ano < 1){
+    this->ano = 01;
+  }else{
+    this->ano = ano;
+  }
 };
 
 int Data::Compare(Data data){

@@ -26,7 +26,11 @@ int Clock::GetHour(){
 };
 
 void Clock::SetHour(int hour){
-  this->hour = hour;
+  if(hour > 24){
+    this->hour = 00;
+  }else{
+    this->hour = hour;
+  }
 };
 
 int Clock::GetMinute(){
@@ -34,7 +38,11 @@ int Clock::GetMinute(){
 };
 
 void Clock::SetMinute(int minute){
-  this->minute = minute;
+  if(minute > 59){
+    this->minute = 00;
+  }else{
+    this->minute = minute;
+  }
 };
 
 int Clock::GetSecond(){
@@ -42,13 +50,29 @@ int Clock::GetSecond(){
 };
 
 void Clock::SetSecond(int second){
-  this->second = second;
+  if(second > 59){
+    this->second = 00;
+  }else{
+    this->second = second;
+  }
 };
 
 void Clock::SetClock(int hour, int minute, int second){
-  this->hour = hour;
-  this->minute = minute;
-  this->second = second;
+  if(hour > 24){
+    this->hour = 00;
+  }else{
+    this->hour = hour;
+  }
+  if(minute > 59){
+    this->minute = 00;
+  }else{
+    this->minute = minute;
+  }
+  if(second > 59){
+    this->second = 00;
+  }else{
+    this->second = second;
+  }
 };
 
 void Clock::Clocking(){
