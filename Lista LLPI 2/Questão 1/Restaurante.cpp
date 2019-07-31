@@ -34,3 +34,7 @@ float Restaurante::calculaTotalRestaurante(){
 
   return total;
 };
+
+void Restaurante::zeraPedidosMesa(int numero_Mesa){
+  mesas[numero_Mesa].zeraPedidos();
+};

@@ -24,6 +24,9 @@ int main(){
 
     cout << "O total a pagar: " << total << endl << "Continuar? ";
     cin >> i;
+
+    cout << "Deseja zerar uma mesa?\n";
+    cin >> i;
   }
 
 }
