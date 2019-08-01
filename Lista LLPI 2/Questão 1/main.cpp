@@ -22,10 +22,22 @@ int main(){
 
     total = restaurante.calculaTotalRestaurante();
 
-    cout << "O total a pagar: " << total << endl << "Continuar? ";
-    cin >> i;
+    cout << "O total a pagar: " << total << endl;
 
     cout << "Deseja zerar uma mesa?\n";
+    cin >> i;
+
+    if(i){
+      cout << "Digite o numero da mesa que deseja zerar: ";
+      cin >> numero_Mesa;
+      restaurante.zeraPedidosMesa(numero_Mesa);
+    }
+
+    total = restaurante.calculaTotalRestaurante();
+
+    cout << "O total a pagar: " << total << endl;
+
+    cout << "Continuar?";
     cin >> i;
   }
 

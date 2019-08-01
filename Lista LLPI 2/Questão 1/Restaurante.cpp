@@ -5,13 +5,15 @@ using namespace std;
 
 Restaurante::Restaurante(){};
 
-void Restaurante::addPedido(int numero_Pedido, string descricao_Pedido, int quantidade_Pedido, float preco_Pedido, int numero_Mesa){
+bool Restaurante::addPedido(int numero_Pedido, string descricao_Pedido, int quantidade_Pedido, float preco_Pedido, int numero_Mesa){
   for(auto &i: mesas){
     if(i.getNumeroMesa() == numero_Mesa){
       if(i.comparaPedido(numero_Pedido)){
         i.addQuantidadePedido(numero_Pedido);
+        return true;
       }else{
         i.addPedido(numero_Pedido, descricao_Pedido, quantidade_Pedido, preco_Pedido);
+        return true;
       }
     }
   };
@@ -23,6 +25,8 @@ void Restaurante::addPedido(int numero_Pedido, string descricao_Pedido, int quan
   mesa.addPedido(numero_Pedido, descricao_Pedido, quantidade_Pedido, preco_Pedido);
 
   mesas.push_back(mesa);
+
+  return false;
 };
 
 float Restaurante::calculaTotalRestaurante(){
@@ -36,5 +40,11 @@ float Restaurante::calculaTotalRestaurante(){
 };
 
 void Restaurante::zeraPedidosMesa(int numero_Mesa){
-  mesas[numero_Mesa].zeraPedidos();
+
+
+  for(auto &i: mesas){
+    if(i.getNumeroMesa() == numero_Mesa){
+      i.zeraPedidos();
+    }
+  }
 };

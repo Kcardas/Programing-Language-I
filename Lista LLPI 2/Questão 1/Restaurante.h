@@ -10,8 +10,9 @@ private:
   vector<Mesa> mesas;
 public:
   Restaurante();
-  void addPedido(int, string, int, float, int);
+  bool addPedido(int, string, int, float, int);
   float calculaTotalRestaurante();
+  void zeraPedidosMesa(int);
 };
 
 #endif

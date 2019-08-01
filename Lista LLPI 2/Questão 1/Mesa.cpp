@@ -35,7 +35,11 @@ bool Mesa::comparaPedido(int numero_Pedido){
 
 void Mesa::addQuantidadePedido(int numero_Pedido){
 
-  pedidos[numero_Pedido].setQuantidadePedido(pedidos[numero_Pedido].getQuantidadePedido() + 1);
+  for(auto &i: pedidos){
+    if(i.getNumeroPedido() == numero_Pedido){
+      i.setQuantidadePedido(i.getQuantidadePedido() + 1);
+    }
+  };
 };
 
 float Mesa::calculaTotal(){
