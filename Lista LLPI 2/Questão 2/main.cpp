@@ -14,7 +14,7 @@ int main(){
   Pessoa pessoa[3];
 
   while(n < 3){
-    cout << "Digite o nome da pessoa 1: ";
+    cout << "Digite o nome da pessoa " << n+1 <<": ";
     getline(cin, nome);
 
     cout << "Digite o telefone: ";
