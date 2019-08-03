@@ -12,9 +12,7 @@ int main(){
 
   float base, altura, raio;
   int escolha;
-  Quadrado quadrado = Quadrado();
-  Triangulo triangulo = Triangulo();
-  Circulo circulo = Circulo();
+  Figura *fig[3];
 
   while(1){
     cout << "Digite o numero referente a opção: \n" << "  1-Calcular area de um quadrado.\n"
@@ -25,19 +23,29 @@ int main(){
       cout << "Digite a base e a altura: ";
       cin >> base >> altura;
       cout << "Area = ";
-      cout << quadrado.calculaArea(base, altura) << endl;
+
+      fig[0] = new Quadrado;
+
+      cout << fig[0]->calculaArea(base, altura) << endl;
+
       break;
       case 2:
       cout << "Digite a base e a altura: ";
       cin >> base >> altura;
       cout << "Area = ";
-      cout << triangulo.calculaArea(base, altura) << endl;
+
+      fig[1] = new Triangulo;
+
+      cout << fig[1]->calculaArea(base, altura) << endl;
       break;
       case 3:
       cout << "Digite o raio: ";
       cin >> raio;
       cout << "Area = ";
-      cout << circulo.calculaArea(raio) << endl;
+
+      fig[2] = new Circulo;
+
+      cout << fig[2]->calculaArea(raio) << endl;
       break;
       case 0:
       return 1;
