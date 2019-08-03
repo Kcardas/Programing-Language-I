@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 #include "Trabalhador.h"
 #include "TrabalhadorA.h"
@@ -15,6 +14,7 @@ int main(){
   std::string nome, barra_n_safado;
   float salario, valor_hora;
   int escolha, horas;
+  Trabalhador *t[2];
 
   while(1){
     MenuPrincipal();
@@ -31,9 +31,9 @@ int main(){
       std::cout << "Digite as horas trabalhadas na semana: ";
       std::cin >> horas;
 
-      TrabalhadorPorHora tPH = TrabalhadorPorHora(nome, valor_hora);
+      t[0] = new TrabalhadorPorHora(nome, valor_hora);
 
-      std::cout << "Nome: " << tPH.getNome() << std::endl << "Salario semanal: " << tPH.calculaPagamentoSemanal(horas) <<
+      std::cout << "Nome: " << t[0]->getNome() << std::endl << "Salario semanal: " << t[0]->calculaPagamentoSemanal(horas) <<
       std::endl;
       }
 
@@ -45,11 +45,9 @@ int main(){
       std::cout << "Digite o valor do salario mensal: ";
       std::cin >> salario;
 
-      TrabalhadorA tA = TrabalhadorA(nome, salario);
+      t[1] = new TrabalhadorA(nome, salario);
 
-      std::cout << tA.getSalario() << std::endl;
-
-      std::cout << "Nome: " << tA.getNome() << std::endl << "Salario semanal: " << tA.calculaPagamentoSemanal() <<
+      std::cout << "Nome: " << t[1]->getNome() << std::endl << "Salario semanal: " << t[1]->calculaPagamentoSemanal() <<
       std::endl;
       }
 

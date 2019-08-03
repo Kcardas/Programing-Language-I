@@ -15,6 +15,7 @@ public:
   void setNome(std::string);
   void setSalario(float);
   virtual float calculaPagamentoSemanal();
+  virtual float calculaPagamentoSemanal(int);
 };
 
 #endif

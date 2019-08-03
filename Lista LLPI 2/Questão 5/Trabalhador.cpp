@@ -34,3 +34,7 @@ void Trabalhador::setSalario(float salario){
 float Trabalhador::calculaPagamentoSemanal(){
   return 0;
 };
+
+float Trabalhador::calculaPagamentoSemanal(int horas){
+  return 0;
+};
