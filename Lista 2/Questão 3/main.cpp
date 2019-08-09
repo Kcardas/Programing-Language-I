@@ -7,7 +7,6 @@ int main(){
 
   std::string nome, matricula, pega_endl;
   int escolha;
-  double salario;
   Sistema sistema;
   Menu menu;
 
