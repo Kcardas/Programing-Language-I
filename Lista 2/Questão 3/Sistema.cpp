@@ -40,9 +40,10 @@ std::string Sistema::consultaSalario(std::string paramentro){
     if(paramentro == i->getNome() || paramentro == i->getMatricula()){
       sstr << "Salario do funcionario " << paramentro << ": " << i->calculaSalario() << std::endl;
       return sstr.str();
-    }else{
-      sstr << "Nao foi possivel achar o funcionario.\n";
     }
   }
+
+  sstr << "Nao foi possivel achar o funcionario.\n";
+  
   return sstr.str();
 };

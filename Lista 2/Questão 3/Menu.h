@@ -12,22 +12,32 @@ class Menu{
 public:
   Menu(){};
   void menuConsulta(Sistema *sistema){
-    std::string parametro;
+    std::string parametro, pega_endl;
+
+    getline(std::cin, pega_endl);
 
     std::cout << "Digite o nome ou a matricula do funcionario: ";
     getline(std::cin, parametro);
     std::cout << sistema->consultaSalario(parametro);
     std::cout << "Total: " << sistema->calculaValorTotal() << std::endl;
   };
-  void menuGetSalario(std::string nome, std::string matricula, Sistema *sistema){
+  void menuGetSalario (Sistema *sistema){
     double salario;
+    std::string nomematricula[2];
+
+    menuNomeMatricula(nomematricula);
 
     std::cout << "Digite o salario do funcionario: ";
     std::cin >> salario;
-    sistema->setFuncionario(nome, matricula, salario);
+    sistema->setFuncionario(nomematricula[0], nomematricula[1], salario);
+
+    menuConsulta(sistema);
   };
-  void menuHoristaComissao(std::string nome, std::string matricula, double salario, Sistema *sistema, int tipo){
-    double valor1, valor2;
+  void menuHoristaComissao(Sistema *sistema, int tipo){
+    double salario,valor1, valor2;
+    std::string nomematricula[2];
+
+    menuNomeMatricula(nomematricula);
 
     std::cout << "Digite o salario do funcionario: ";
     std::cin >> salario;
@@ -44,7 +54,45 @@ public:
       std::cin >> valor2;
     }
 
-    sistema->setFuncionario(nome, matricula, salario, valor1, valor2, tipo);
+    sistema->setFuncionario(nomematricula[0], nomematricula[1], salario, valor1, valor2, tipo);
+
+    menuConsulta(sistema);
+  };
+
+  void menuNomeMatricula(std::string nomematricula[]){
+    std::string pega_endl;
+
+    getline(std::cin, pega_endl);
+
+    std::cout << "Digite o nome e matricula do funcionario: \n  Nome: ";
+    getline(std::cin, nomematricula[0]);
+    std::cout << "  Matricula: ";
+    getline(std::cin, nomematricula[1]);
+  };
+
+  int menuPrincipal(Sistema *sistema){
+    int escolha;
+
+    LOTO:std::cout << "Qual o tipo de salario do funcionario:\n  1-Assalariado\n  2-Horista\n  3-Comissionado\n  0-Sair\n";
+    std::cin >> escolha;
+
+    switch(escolha){
+      case 1:
+      menuGetSalario(sistema);
+      return 1;
+      case 2:
+      menuHoristaComissao(sistema, escolha);
+      return 1;
+      case 3:
+      menuHoristaComissao(sistema, escolha);
+      return 1;
+      case 0:
+      return 0;
+      default:
+      std::cout << "Digite uma opção válida.\n";
+      goto LOTO;
+      break;
+    }
   }
 };
 
