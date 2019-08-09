@@ -5,13 +5,10 @@
 
 int main(){
 
-  int n = 1;
   Sistema sistema;
   Menu menu;
 
-  while(n){
-    n = menu.menuPrincipal(&sistema);
-  }
+  menu.menuPrincipal(&sistema);
 
   return 0;
 }

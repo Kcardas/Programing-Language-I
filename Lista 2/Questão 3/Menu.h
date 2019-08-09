@@ -4,9 +4,7 @@
 #include <iostream>
 #include <vector>
 
-#include "Comissionado.h"
-#include "Horista.h"
-#include "Assalariado.h"
+#include "Sistema.h"
 
 class Menu{
 public:
@@ -70,30 +68,33 @@ public:
     getline(std::cin, nomematricula[1]);
   };
 
-  int menuPrincipal(Sistema *sistema){
-    int escolha;
+  void menuPrincipal(Sistema *sistema){
+    int escolha, n = 1;
 
-    LOTO:std::cout << "Qual o tipo de salario do funcionario:\n  1-Assalariado\n  2-Horista\n  3-Comissionado\n  0-Sair\n";
-    std::cin >> escolha;
+    while(n){
+      LOTO:std::cout << "Qual o tipo de salario do funcionario:\n  1-Assalariado\n  2-Horista\n  3-Comissionado\n  0-Sair\n";
+      std::cin >> escolha;
 
-    switch(escolha){
-      case 1:
-      menuGetSalario(sistema);
-      return 1;
-      case 2:
-      menuHoristaComissao(sistema, escolha);
-      return 1;
-      case 3:
-      menuHoristaComissao(sistema, escolha);
-      return 1;
-      case 0:
-      return 0;
-      default:
-      std::cout << "Digite uma opção válida.\n";
-      goto LOTO;
-      break;
+      switch(escolha){
+        case 1:
+        menuGetSalario(sistema);
+        break;
+        case 2:
+        menuHoristaComissao(sistema, escolha);
+        break;
+        case 3:
+        menuHoristaComissao(sistema, escolha);
+        break;
+        case 0:
+        n = 0;
+        break;
+        default:
+        std::cout << "Digite uma opção válida.\n";
+        goto LOTO;
+        break;
+      }
     }
-  }
+  };
 };
 
 #endif
