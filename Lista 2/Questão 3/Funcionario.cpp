@@ -17,6 +17,14 @@ std::string Funcionario::getMatricula(){
   return matricula;
 };
 
+int Funcionario::getTipo(){
+  return tipo;
+};
+
+void Funcionario::setTipo(int tipo){
+  this->tipo = tipo;
+};
+
 void Funcionario::setNome(std::string nome){
   this->nome = nome;
 };

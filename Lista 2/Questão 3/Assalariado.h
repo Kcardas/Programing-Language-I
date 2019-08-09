@@ -3,7 +3,7 @@
 
 #include "Funcionario.h"
 
-class Assalariado : Funcionario{
+class Assalariado : public Funcionario{
 private:
   double salario;
 public:

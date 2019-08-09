@@ -8,6 +8,7 @@ Comissionado::Comissionado(std::string nome, std::string matricula, double venda
   setVendaSemanais(vendaSemanais);
   setPercentualComissao(percentualComissao);
   setSalario(salario);
+  setTipo(3);
 };
 
 double Comissionado::getVendaSemanais(){
@@ -35,5 +36,5 @@ void Comissionado::setPercentualComissao(double percentualComissao){
 };
 
 double Comissionado::calculaSalario(){
-  return salario + (percentualComissao * vendaSemanais);
+  return (salario + (percentualComissao/100 * vendaSemanais));
 };

@@ -6,6 +6,7 @@ Assalariado::Assalariado(){};
 
 Assalariado::Assalariado(std::string nome, std::string matricula, double salario) : Funcionario(nome, matricula){
   setSalario(salario);
+  setTipo(1);
 };
 
 double Assalariado::getSalario(){

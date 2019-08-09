@@ -8,6 +8,7 @@ Horista::Horista(std::string nome, std::string matricula, double salarioPorHora,
   setSalarioPorHora(salarioPorHora);
   setHorasTrabalhadas(horasTrabalhadas);
   setSalario(salario);
+  setTipo(2);
 };
 
 double Horista::getSalarioPorHora(){
@@ -41,6 +42,6 @@ double Horista::calculaSalario(){
     return salario;
   }else{
     horas_extras = (horasTrabalhadas - 40) * 1.5;
-    return (salarioPorHora * (40 + horas_extras)) + salario;
+    return (salarioPorHora * horas_extras) + salario;
   }
 };
