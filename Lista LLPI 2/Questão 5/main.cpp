@@ -34,7 +34,7 @@ int main(){
       t[0] = new TrabalhadorPorHora(nome, valor_hora);
 
       std::cout << "Nome: " << t[0]->getNome() << std::endl << "Salario semanal: " << t[0]->calculaPagamentoSemanal(horas) <<
-      std::endl;
+      std::endl << "Salario Mensal: " << t[0]->calculaPagamentoSemanal(horas) * 4 << std::endl;
       }
 
       break;
@@ -48,7 +48,7 @@ int main(){
       t[1] = new TrabalhadorA(nome, salario);
 
       std::cout << "Nome: " << t[1]->getNome() << std::endl << "Salario semanal: " << t[1]->calculaPagamentoSemanal() <<
-      std::endl;
+      std::endl << "Salario Mensal: " << t[1]->getSalario() << std::endl;
       }
 
       break;
