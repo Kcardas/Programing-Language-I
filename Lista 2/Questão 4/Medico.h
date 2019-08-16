@@ -14,4 +14,6 @@ public:
   void setNome(std::string);
   void setAltura(double);
   void setPeso(double);
-}
+};
+
+#endif
