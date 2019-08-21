@@ -2,7 +2,9 @@
 
 #include "Oftalmo.h"
 
-Oftalmo::Oftalmo(std::string nome, double altura, double peso, std::string especialidade) : Medico(nome, altura, peso){
+Oftalmo::Oftalmo(){};
+
+Oftalmo::Oftalmo(std::string nome, double altura, double peso) : Medico(nome, altura, peso){
   setEspecialidade(especialidade);
 };
 
@@ -17,7 +19,7 @@ bool Oftalmo::getOcupado(){
 };
 
 void Oftalmo::setEspecialidade(std::string especialidade){
-  this->especialidade = especialidade;
+  this->especialidade = "Oftalmo";
 };
 
 void Oftalmo::setOcupado(bool ocupado){

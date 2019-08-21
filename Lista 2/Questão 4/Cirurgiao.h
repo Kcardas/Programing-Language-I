@@ -1,16 +1,16 @@
-#ifndef OFTALMO_OFTALMO_H
-#define OFTALMO_OFTALMO_H
+#ifndef CIRURGIAO_CIRURGIAO_H
+#define CIRURGIAO_CIRURGIAO_H
 
 #include "Medico.h"
 
-class Oftalmo : public Medico{
+class Cirurgiao : public Medico{
 private:
   std::string especialidade;
   bool ocupado;
 public:
-  Oftalmo();
-  Oftalmo(std::string, double, double);
-  virtual ~Oftalmo();
+  Cirurgiao();
+  Cirurgiao(std::string, double, double);
+  virtual ~Cirurgiao();
   std::string getEspecialidade();
   bool getOcupado();
   void setEspecialidade(std::string);
