@@ -1,0 +1,3 @@
+Polimorfismo é quando usa-se de uma referência abstrata (no caso classe abstrata) para acessar os metodos e atributos de diferentes tipos de classes concretas.
+Por exemplo, usando de polimorfismo você pode ter um array de um tipo de classe que consegue acessar classes diferentes, contanto que sejam filhas da classe do array.
+Está em anexo um código exemplificando o polimorfismo.
